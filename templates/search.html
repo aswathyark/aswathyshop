@@ -1,0 +1,71 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<body id="top">
+
+
+<!--  <div class="wrapper row1">-->
+<!--    <header id="header" class="hoc clear">-->
+<!--      <div id="logo" class="fl_left">-->
+<!--        &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--        <h1><a href="/">AVODHA SHOPPING</a></h1>-->
+<!--        &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--      </div>-->
+<!--      <nav id="mainav" class="fl_right">-->
+<!--        &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--        <ul class="clear">-->
+<!--          <li class="active"><a href="/">Home</a></li>-->
+<!--          <li><a class="drop" href="/">FILTER</a></li>-->
+
+<!--        </ul>-->
+<!--        &lt;!&ndash; ################################################################################################ &ndash;&gt;-->
+<!--      </nav>-->
+<!--    </header>-->
+<!--  </div>-->
+<!-- </div>-->
+<!--</body>-->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+
+    <section id="introblocks">
+      <ul class="nospace group btmspace-80">
+    {% for i in pr %}
+        <li class="one_third">
+          <figure><a class="imgover" href="{{i.get_url}}"><img src="{{i.img.url}}" alt=""style="height:300;"></a>
+            <figcaption>
+              <h6 class="heading">{{i.name}}</h6>
+              <p>{{i.desc|truncatechars:3}}</p>
+              <br>
+              <p>price:{{i.price}}Rs</p>
+              <br>
+              <p>stock left:{{i.stock}}</p>
+            </figcaption>
+          </figure>
+        </li>
+        {% endfor %}
+
+
+
+
+
+
+      </ul>
+    </section>
+    <hr class="btmspace-80">
+
+    <div class="clear"></div>
+  </main>
+</div>
+
+</div>
+
+<script src="{% static 'hm/layout/scripts/jquery.min.js'%}"></script>
+<script src="{% static 'hm/layout/scripts/jquery.backtotop.js'%}"></script>
+<script src="{% static 'hm/layout/scripts/jquery.mobilemenu.js'%}"></script>
+
+</body>
+
+
+</html>
+{% endblock %}
